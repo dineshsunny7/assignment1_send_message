@@ -19,7 +19,7 @@ def send_message():
     requests.post(URL,data=json.dumps(message))
     return
 
-schedule.every(3).seconds.do(send_message)
+schedule.every().day.at("16:00").do(send_message)
 while 1:
   schedule.run_pending()
   time.sleep(1)
